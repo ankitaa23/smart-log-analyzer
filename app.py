@@ -35,6 +35,13 @@ def analyze_logs(logs):
 def home():
     return "Smart Log Analyzer Running"
 
+@app.route('/health')
+def health():
+    return{
+        "status": "running",
+        "project": "smart log analyzer"
+    }    
+
 @app.route('/analyze', methods=['POST'])
 def analyze():
     data = request.json
